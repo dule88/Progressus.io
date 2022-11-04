@@ -1,0 +1,225 @@
+@import 'delovi/variables';
+@import 'delovi/base';
+@import 'delovi/mixins';
+@import 'delovi/typography';
+
+// Header
+header {
+    background-image: linear-gradient(rgba($overlay, 0.8), rgba($overlayheader, 0.1)), url(images/bg_header.jpg);
+    height: 70vh;
+
+    // Navigacija
+
+    nav{
+        height: 15vh;
+        @include flex(space-between, center);
+        .burgerMeni{
+            display: none;
+            @include responsive(mobilni){
+                display: block;
+            }
+        }
+        ul {
+            @include flex(space-between, center);
+            gap: 1rem;
+            text-transform: capitalize;
+            a:last-child{
+                text-transform: uppercase;
+                border: 1px solid $white;
+                padding: 0.2rem 0.5rem;
+                &:hover{
+                    background-color: $button;
+                    border-color: $button;
+                }
+            }
+            @include responsive(mobilni){
+                @include flex(flex-start, center, column);
+                padding: 1rem;
+                display: none;
+            }
+
+        }
+        
+    }
+
+    // Naslov unutar headera
+    .headline{
+        height: 45vh;
+        @include flex(center, center, column);
+        ul {
+            @include flex(center, center);
+            gap: 1rem;
+            margin-top: 1rem;
+            a{
+                border: 1px solid $white; 
+                padding: 0.5rem 1rem; 
+                border-radius: 3px;
+                text-transform: uppercase;
+                &:hover{
+                    background-color: $overlay;
+                    border-color: $overlay;
+                }
+                &:last-child{
+                    background-color: $button;
+                    border-color: $button;
+                    &:hover{
+                        background-color: $overlay;
+                        border-color: $overlay;
+                    }
+                }
+                @include responsive(mobilni){
+                    font-size: 0.8rem;
+                    padding: 0.2rem 0.5rem; 
+                }
+            }
+        }
+    }
+}
+
+
+
+// Sekcija 1
+
+.template{
+
+    //ARTICLE INTRO
+    .intro{
+        margin: 5rem;
+        h3{
+            margin-bottom: 0.5rem;
+        }
+    }
+    //ARTICLE REASONS
+    .reasons{
+        background-color: $primary;
+        padding: 4rem 0;
+        div{
+            @include flex(space-around, center);
+            div{
+                padding: 3rem 0.8rem 2rem;
+                flex: 0 0 25%;
+                @include responsive(mobilni){
+                    flex: 0 0 50%;
+                }
+                @include responsive(maliMobilni){
+                    flex: 0 0 100%;
+                }
+                img{
+                    width: 2rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+
+//SEKCIJA 2
+.moreInfo{
+    padding-bottom: 5rem;
+    article{
+        .questions{
+            margin: 4rem auto 3rem;
+            text-transform: capitalize;
+        }
+        div{
+            @include flex(flex-start, stretch);
+            div{
+                padding: 1rem;
+                flex: 0 0 50%;
+                @include responsive(tablet){
+                    flex: 0 0 100%;
+                }
+                h5{
+                    color: $black;
+                    font-weight: 400;
+                    text-align: justify;
+                }
+                p{
+                    text-align: justify;
+                }
+            }
+            div>h5{
+                padding-bottom: 0.2rem;
+            }
+        }
+    }
+}
+.learnMore{
+    margin-top: 3rem;
+    background-color: $primary;
+    p{
+        text-align: justify;
+        margin: 3rem 2rem 0;
+        font-weight: 400;
+        color: $black;
+    }
+    a{
+        background-color: $button;
+        margin: 2rem 3rem 2rem auto;
+        border-radius: 0.2rem;
+        padding: 0.4rem 1.5rem;
+        &:hover{
+            background-color: $overlay;
+        }
+        @include responsive(maliMobilni){
+            margin: 2rem auto;
+        }
+    }
+}
+
+// FOOTER
+
+footer{
+    background-color: $black;
+    padding: 3rem 0;
+    color: $white;
+    .container{
+        @include flex(flex-start, flex-start);
+        @include responsive(mobilni){
+            @include flex(center, center, column);
+        }
+        article{
+            @include responsive(mobilni){
+                margin: 1.5rem 7rem;
+            }
+            h6{
+                text-align: start;
+                padding-bottom: 0.5rem;
+                @include responsive(mobilni){
+                    text-align: center;
+                }
+            }
+            p{
+                color: $white;
+                text-align: start;
+                @include responsive(mobilni){
+                    text-align: center;
+                }
+            }
+        }
+        .one {
+            flex: 1 1 0; 
+            p{
+                opacity: 0.5;
+            }  
+        
+        }
+        .two {
+            flex: 1 1 0;
+            i{
+                margin-right: 0.3rem;
+            }
+        }
+        .three {
+            flex: 2 1 0;
+            p{
+                opacity: 0.5;
+            }
+        }
+    }
+}
+    
+
+
+

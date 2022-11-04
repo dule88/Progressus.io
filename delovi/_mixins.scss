@@ -1,0 +1,44 @@
+/***********************
+Miksini
+************************/
+@mixin dugme($bckColor, $bckHover) {
+    background-color: $bckColor;
+    padding: 0.5rem 1rem;
+    margin: auto;
+    transition: $transition;
+    color: $bckHover;
+  
+    &:hover {
+      background-color: $bckHover;
+      color: $bckColor;
+    }
+  }
+  
+  @mixin flex($justify, $align, $direction: row, $wrap: wrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+  }
+  
+  
+  @mixin responsive($velicina) {
+    @if $velicina == tablet {
+      @media screen and (max-width: 980px) {
+        @content;
+      }
+    }
+    @if $velicina == mobilni {
+      @media screen and (max-width: 768px) {
+        @content;
+      }
+    }
+    @if $velicina == maliMobilni {
+      @media screen and (max-width: 568px) {
+        @content;
+      }
+    }
+  }
+
+  

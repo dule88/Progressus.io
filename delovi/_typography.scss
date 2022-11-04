@@ -1,0 +1,77 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 3rem;
+  color: $white;
+  text-transform: uppercase;
+
+  @include responsive(tablet) {
+    font-size: 2rem;
+  }
+
+  @include responsive(mobilni) {
+    font-size: 1.5rem;
+  }
+  @include responsive(maliMobilni) {
+    font-size: 1.2rem;
+  }
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: $textColor;
+  @include responsive(mobilni) {
+    font-size: 1.2rem;
+  }
+  @include responsive(mobilni) {
+    font-size: 0.8rem;
+  }
+}
+
+h4{
+  color: $textColor;
+  font-size: 1.5rem;
+  @include responsive(mobilni) {
+    font-size: 1rem;
+  }
+  @include responsive(maliMobilni) {
+    font-size: 0.7rem;
+  }
+}
+h5 {
+  font-size: 1.2rem;
+  color: $white;
+  @include responsive(mobilni) {
+    font-size: 0.8rem;
+  }
+  @include responsive(maliMobilni) {
+    font-size: 0.6rem;
+  }
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  opacity: 0.9;
+  font-size: 0.9rem;
+  color: $textColor;
+  @include responsive(mobilni) {
+    font-size: 0.6rem;
+  }
+  @include responsive(maliMobilni) {
+    font-size: 0.4rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
